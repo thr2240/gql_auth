@@ -1,0 +1,28 @@
+[package]
+name = "limitation"
+version = "0.1.1"
+authors = ["Fletcher Nichol <fnichol@nichol.ca>"]
+edition = "2018"
+license = "MPL-2.0"
+repository = "https://github.com/fnichol/limitation"
+documentation = "https://docs.rs/limitation"
+readme = "README.md"
+keywords = ["rate-limit", "rate-limiting", "limiter", "redis"]
+categories = ["asynchronous", "web-programming"]
+description = """
+A rate limiter using a fixed window counter for arbitrary keys, backed by
+Redis.
+"""
+
+[badges]
+cirrus-ci = { repository = "fnichol/limitation" }
+
+[dependencies]
+chrono = "0.4.9"
+futures = "0.1.29"
+redis = "0.13.0"
+time = "0.1.42"
+
+[dev-dependencies]
+tokio = "0.1.22"
+version-sync = "0.8.1"

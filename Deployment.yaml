@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: upwork-auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: upwork-auth
+  template:
+    metadata:
+      labels:
+        app: upwork-auth
+    spec:
+      containers:
+        - name: router
+          image: upwork-auth:router
+        - name: sidecar
+          image: upwork-auth:sidecar
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: upwork-auth
+spec:
+  type: ClusterIP
+  ports:
+    - protocol: TCP
+      port: 4000
+      targetPort: 4000
+  selector:
+    app: upwork-auth

@@ -1,0 +1,7 @@
+[workspace]
+default-members = ["wasm-sidecar"]
+members = [
+    "wasm-sidecar",
+    "integrations/apollo-router-plugin",
+    "wasi_crates/limitation"
+]

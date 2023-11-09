@@ -1,0 +1,6 @@
+plugins:
+  # this plugin takes a path
+  # and will read from it everytime a request comes in
+  # to check if a client can run a query
+  alyti.sidecar:
+    addr: "http://localhost:8080"
